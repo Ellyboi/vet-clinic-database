@@ -1,8 +1,4 @@
-# curriculum-databases-projects-template
-
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
-
+# Vet clinic database
 
 ## Getting Started
 
@@ -49,7 +45,7 @@ After you're finished please remove all the comments and instructions!
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Install](#install)
+  <!-- - [Install](#install) -->
   - [Usage](#usage)
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
@@ -63,31 +59,29 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [your_project_name] <a name="about-project"></a>
+# 📖 Vet clinic database <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
-
-**[your_project__name]** is a...
+**Vet Clinic database** is a relational database based on a real-life example which contains information about some animals.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+<!-- > Describe the tech stack and include only the relevant sections that apply to your project. -->
 
-<details>
+<!-- <details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://reactjs.org/">React.js</a></li>
   </ul>
-</details>
+</details> -->
 
-<details>
+<!-- <details>
   <summary>Server</summary>
   <ul>
     <li><a href="https://expressjs.com/">Express.js</a></li>
   </ul>
-</details>
+</details> -->
 
 <details>
 <summary>Database</summary>
@@ -100,35 +94,35 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
+<!-- > Describe between 1-3 key features of the application. -->
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+- **Create animals table**
+- **Populate the table**
+- **Perform some queries to retrieve specific data or alter the database**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
 > Add a link to your deployed project.
 
-- [Live Demo Link](<replace-with-your-deployment-URL>)
+- [Live Demo Link](<replace-with-your-deployment-URL>) -->
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
+<!-- > Describe how a new developer could make use of your project. -->
 
 To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-In order to run this project you need:
+In order to run this project you need to install PostgreSQL, create a database and run the queries in schema.sql and data.sql files to be able to get started
 
 <!--
 Example command:
@@ -151,9 +145,9 @@ Example commands:
 ```
 --->
 
-### Install
+<!-- ### Install
 
-Install this project with:
+Install this project with: -->
 
 <!--
 Example command:
@@ -166,7 +160,7 @@ Example command:
 
 ### Usage
 
-To run the project, execute the following command:
+You can find some examples of queries you can run on the database in queries.sql
 
 <!--
 Example command:
@@ -176,9 +170,9 @@ Example command:
 ```
 --->
 
-### Run tests
+<!-- ### Run tests
 
-To run tests, run the following command:
+To run tests, run the following command: -->
 
 <!--
 Example command:
@@ -190,7 +184,7 @@ Example command:
 
 ### Deployment
 
-You can deploy this project using:
+Coming soon
 
 <!--
 Example:
@@ -208,17 +202,12 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Author1**
+👤 **Gueleu S. Farida**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+ - GitHub: [@Ellyboi](https://github.com/Ellyboi)
+ - Twitter: [@Elijahvitoesi](https://twitter.com/Elijahvitoesi)
+ - LinkedIn: [Vitoesi Elijah](https://www.linkedin.com/in/elijah-vitoesi/)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -226,11 +215,9 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
+- [ ] **Queries to update animals table**
+- [ ] **Query multiple tables**
+- [ ] **Add database schema diagram**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -240,7 +227,7 @@ Example:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Ellyboi/vet-clinic-database/issue).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -248,9 +235,9 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-> Write a message to encourage readers to support your project
+<!-- > Write a message to encourage readers to support your project -->
 
-If you like this project...
+If you like this project please give it a star 😁🌟✨
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -258,9 +245,9 @@ If you like this project...
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> Give credit to everyone who inspired your codebase.
+<!-- > Give credit to everyone who inspired your codebase. -->
 
-I would like to thank...
+I would like to thank Microverse for providing the necessary resources for the realisation of this project
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -268,15 +255,15 @@ I would like to thank...
 
 ## ❓ FAQ <a name="faq"></a>
 
-> Add at least 2 questions new developers would ask when they decide to use your project.
+<!-- > Add at least 2 questions new developers would ask when they decide to use your project. -->
 
-- **[Question_1]**
+- **How do I create a database**
 
-  - [Answer_1]
+  - After connecting to postgres you run the command `createdb vet_clinic;`
 
-- **[Question_2]**
+- **How do I connect to the database**
 
-  - [Answer_2]
+  - run `\c vet_clinic`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
