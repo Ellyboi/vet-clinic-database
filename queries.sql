@@ -26,6 +26,9 @@ ROLLBACK;
 -- Verifying that the species column went back to the state before the transaction
 SELECT * FROM animals;
 
+
+
+
 -- Starting the transaction
 START TRANSACTION;
 
