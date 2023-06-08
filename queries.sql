@@ -10,89 +10,55 @@ SELECT * FROM animals WHERE name <> 'Gabumon';
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
 
--- Starting the transaction
-START TRANSACTION;
+ALTER TABLE animals ADD COLUMN species VARCHAR;
 
--- Updating the species column to "unspecified"
-UPDATE animals SET species = 'unspecified';
+BEGIN;
 
--- Verifying the change
-SELECT * FROM animals;
+  UPDATE animals SET species = 'unspecified';
 
--- Rolling back the transaction
-ROLLBACK;
+BEGIN;
 
--- Verifying that the species column went back to the state before the transaction
-SELECT * FROM animals;
+  UPDATE animals SET species = 'digimon' WHERE name like '%mon';
 
--- Starting the transaction
-START TRANSACTION;
+  UPDATE animals SET species = 'pokemon' WHERE species IS NULL OR species = '';
 
--- Updating the species column to "digimon" for animals whose name ends in "mon"
-UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
+BEGIN;
 
--- Updating the species column to "pokemon" for animals without a species already set
-UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
+  DELETE FROM animals;
 
--- Verifying the changes
-SELECT * FROM animals;
+BEGIN;
 
--- Committing the transaction
-COMMIT;
+  DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 
--- Verifying that changes persist after commit
-SELECT * FROM animals;
+  SAVEPOINT SP1;
 
--- Starting the transaction
-START TRANSACTION;
+  UPDATE animals SET weight_kg = weight_kg * -1;
 
--- Deleting all records from the animals table
-DELETE FROM animals;
+  ROLLBACK TO SP1;
 
--- Verifying the deletion
-SELECT * FROM animals;
+  UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
 
--- Rolling back the transaction
-ROLLBACK;
+SELECT COUNT(*) FROM animals;
 
--- Verifying if all records still exist after rollback
-SELECT * FROM animals;
+SELECT COUNT(escape_attempts) FROM animals WHERE escape_attempts = 0;
 
--- Starting the transaction
-START TRANSACTION;
+SELECT 
+  weight_kg,
+  AVG(weight_kg)
+  FROM animals GROUP BY weight_kg;
 
--- Deleting all animals born after Jan 1st, 2022
-DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+  SELECT 
+    neutered,
+    MAX(escape_attempts)
+    FROM animals
+    GROUP BY neutered;
 
--- Creating a savepoint
-SAVEPOINT my_savepoint;
+  SELECT 
+    weight_kg,
+    MIN(weight_kg),MAX(weight_kg) FROM animals 
+    GROUP BY weight_kg;
 
--- Updating all animals' weight to be their weight multiplied by -1
-UPDATE animals SET weight_kg = weight_kg * -1;
-
--- Rolling back to the savepoint
-ROLLBACK TO my_savepoint;
-
--- Updating all animals' weights that are negative to be their weight multiplied by -1
-UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
-
--- Committing the transaction
-COMMIT;
-
-
-SELECT COUNT(*) AS total_animals FROM animals;
-SELECT COUNT(*) AS non_escape_animals FROM animals WHERE escape_attempts = 0;
-SELECT AVG(weight_kg) AS average_weight FROM animals;
-
-SELECT neutered, MAX(escape_attempts) AS max_escape_attempts
-FROM animals
-GROUP BY neutered;
-
-SELECT species, MIN(weight_kg) AS min_weight, MAX(weight_kg) AS max_weight
-FROM animals
-GROUP BY species;
-
-SELECT species, AVG(escape_attempts) AS average_escape_attempts
-FROM animals
-WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31'
-GROUP BY species;
+  SELECT date_of_birth,
+    AVG(escape_attempts),
+    date_of_birth BETWEEN '1990-12-01' AND '2000-12-01'
+    FROM animals GROUP BY date_of_birth;
