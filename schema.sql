@@ -12,6 +12,7 @@ CREATE TABLE animals (
     weight_kg DECIMAL,
 );
 
+
 -- Create owners table
 CREATE TABLE owners (
   id SERIAL PRIMARY KEY,
@@ -31,3 +32,4 @@ ALTER TABLE animals
   DROP COLUMN species,
   ADD COLUMN species_id INTEGER REFERENCES species(id),
   ADD COLUMN owner_id INTEGER REFERENCES owners(id);
+
