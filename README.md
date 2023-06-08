@@ -102,14 +102,6 @@ After you're finished please remove all the comments and instructions!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
-
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
-- [Live Demo Link](<replace-with-your-deployment-URL>) -->
-
 <!-- <p align="right">(<a href="#readme-top">back to top</a>)</p> -->
 
 <!-- GETTING STARTED -->
@@ -128,7 +120,8 @@ In order to run this project you need to install PostgreSQL, create a database a
 Example command:
 
 ```sh
- gem install rails
+  cd vet-clinic
+  git clone git@github.com/Ellyboi/vet-clinic-database.git
 ```
  -->
 
@@ -202,7 +195,7 @@ Example:
 
 > Mention all of the collaborators of this project.
 
-👤 **Gueleu S. Farida**
+👤 **Vitoesi Elijah**
 
  - GitHub: [@Ellyboi](https://github.com/Ellyboi)
  - Twitter: [@Elijahvitoesi](https://twitter.com/Elijahvitoesi)
