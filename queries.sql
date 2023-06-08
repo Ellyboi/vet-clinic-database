@@ -10,7 +10,7 @@ SELECT * FROM animals WHERE name <> 'Gabumon';
 SELECT * FROM animals WHERE weight_kg BETWEEN 10.4 AND 17.3;
 
 
-ALTER TABLE animals ADD COLUMN species VARCHAR;
+
 -- Starting the transaction
 START TRANSACTION;
 
@@ -25,9 +25,6 @@ ROLLBACK;
 
 -- Verifying that the species column went back to the state before the transaction
 SELECT * FROM animals;
-
-
-
 
 -- Starting the transaction
 START TRANSACTION;

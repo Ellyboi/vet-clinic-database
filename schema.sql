@@ -19,6 +19,7 @@ CREATE TABLE owners (
   age INTEGER
 );
 
+ALTER TABLE animals ADD COLUMN species VARCHAR;
 -- Create species table
 CREATE TABLE species (
   id SERIAL PRIMARY KEY,

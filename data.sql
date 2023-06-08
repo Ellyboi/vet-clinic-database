@@ -27,18 +27,14 @@ INSERT INTO species (name) VALUES
 
 -- Update animals with species_id based on name
 UPDATE animals
-SET species_id = (CASE
-                    WHEN name ILIKE '%mon' THEN (SELECT id FROM species WHERE name = 'Digimon')
-                    ELSE (SELECT id FROM species WHERE name = 'Pokemon')
-                  END);
+SET species_id = (CASE WHEN name ILIKE '%mon' THEN (SELECT id FROM species WHERE name = 'Digimon')
+ELSE (SELECT id FROM species WHERE name = 'Pokemon') END);
 
 -- Update animals with owner_id based on owner's full_name
 UPDATE animals
-SET owner_id = (CASE
-                  WHEN owner_id IS NULL THEN
-                    (SELECT id FROM owners WHERE full_name = 'Sam Smith')
-                  ELSE owner_id
-                END)
+SET owner_id = (CASE WHEN owner_id IS NULL THEN
+(SELECT id FROM owners WHERE full_name = 'Sam Smith')
+ELSE owner_id END)
 WHERE name = 'Agumon';
 
 UPDATE animals
