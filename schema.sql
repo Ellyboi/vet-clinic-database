@@ -12,7 +12,6 @@ CREATE TABLE animals (
     weight_kg DECIMAL,
 );
 
-
 -- Create owners table
 CREATE TABLE owners (
   id SERIAL PRIMARY KEY,
@@ -21,15 +20,27 @@ CREATE TABLE owners (
 );
 
 ALTER TABLE animals ADD COLUMN species VARCHAR;
--- Create species table
-CREATE TABLE species (
+
+CREATE TABLE vets (
   id SERIAL PRIMARY KEY,
-  name VARCHAR(255)
+  name VARCHAR,
+  age INTEGER,
+  date_of_graduation DATE
 );
 
--- Modify animals table
-ALTER TABLE animals
-  DROP COLUMN species,
-  ADD COLUMN species_id INTEGER REFERENCES species(id),
-  ADD COLUMN owner_id INTEGER REFERENCES owners(id);
+ALTER TABLE animals ADD CONSTRAINT animals_pk PRIMARY KEY (id);
 
+CREATE TABLE specializations (
+  vet_id INTEGER,
+  species_id INTEGER,
+  FOREIGN KEY (vet_id) REFERENCES vets (id),
+  FOREIGN KEY (species_id) REFERENCES species (id)
+);
+
+CREATE TABLE visits (
+  animal_id INTEGER,
+  vet_id INTEGER,
+  visit_date DATE,
+  FOREIGN KEY (animal_id) REFERENCES animals (id),
+  FOREIGN KEY (vet_id) REFERENCES vets (id)
+);
