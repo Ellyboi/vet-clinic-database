@@ -1,5 +1,7 @@
 # Vet clinic database
 
+![image](https://github.com/Ellyboi/vet-clinic-database/assets/70116262/6ce66bbe-4f88-49a9-8e92-a8d9f4d3cdad)
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
